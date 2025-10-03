@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const alertMessage = document.getElementById('alert-message');
     const alertCloseButton = document.getElementById('alert-close-button');
 
-    const API_URL = 'https://agendamento-ql82.onrender.com'; 
+    const API_URL = 'https://agendamento-servidor.onrender.com/'; 
     const workHours = { start: 9, end: 21 };
     let currentDay = new Date();
 
