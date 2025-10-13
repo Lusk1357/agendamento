@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fileNameSpan.textContent = imagemInput.files.length > 0 ? imagemInput.files[0].name : 'Nenhum arquivo selecionado';
     });
 
-    const API_URL = 'http://127.0.0.1:5000'; 
+    const API_URL = 'https://agendamento-server.onrender.com'; 
     const workHours = { start: 9, end: 21 };
     let currentDay = new Date();
     let alertCallback = null;
@@ -154,4 +154,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     renderCalendar(currentDay);
+
 });
