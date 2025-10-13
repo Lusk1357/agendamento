@@ -3,19 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendamento de Tatuagem</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Agendamento de Tatuagem - Kayre Felix</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="calendar-container">
-        <div class="calendar-header">
-            <button id="prev-week" class="nav-button">&lt; Anterior</button>
-            <h2 id="current-week"></h2>
-            <button id="next-week" class="nav-button">Próxima &gt;</button>
+    <div class="main-container">
+        <div class="cta-container">
+            <button id="cta-button" class="cta-button">Agende o seu horario</button>
         </div>
-        <div class="calendar-grid-wrapper">
-            <div id="calendar-grid" class="calendar-grid"></div>
+
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <button id="prev-week" class="nav-button">&lt; Anterior</button>
+                <h2 id="current-week"></h2>
+                <button id="next-week" class="nav-button">Próxima &gt;</button>
+            </div>
+            <div class="calendar-grid-wrapper">
+                <div id="calendar-grid" class="calendar-grid"></div>
+            </div>
         </div>
     </div>
 
@@ -24,13 +34,23 @@
             <span id="close-button" class="close-button">&times;</span>
             <h2>Agendar Horário</h2>
             <p id="modal-info"></p>
-            <form id="booking-form">
+            <form id="booking-form" enctype="multipart/form-data">
                 <label for="nome">Seu Nome:</label>
                 <input type="text" id="nome" name="nome" required>
+                
                 <label for="telefone">Seu Telefone (WhatsApp):</label>
                 <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
+                
                 <label for="ideia">Ideia para a Tatuagem (opcional):</label>
                 <textarea id="ideia" name="ideia"></textarea>
+                
+                <label for="ideia-imagem">Imagem de Referência (opcional):</label>
+                <div class="file-input-wrapper">
+                    <input type="file" id="ideia-imagem" name="ideia-imagem" accept="image/*">
+                    <label for="ideia-imagem" class="file-input-label">Escolher arquivo</label>
+                    <span id="file-name" class="file-name">Nenhum arquivo selecionado</span>
+                </div>
+
                 <button type="submit">Confirmar Agendamento</button>
             </form>
         </div>
@@ -38,11 +58,11 @@
 
     <div id="alert-modal" class="modal-overlay">
         <div class="modal-content">
-            <p id="alert-message" style="font-size: 1.1em; color: #333;"></p>
+            <p id="alert-message" style="font-size: 1.1em; color: var(--text-light);"></p>
             <button id="alert-close-button" class="modal-button">OK</button>
         </div>
     </div>
 
-    <script src="index.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
