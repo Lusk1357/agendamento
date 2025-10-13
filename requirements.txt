@@ -34,5 +34,6 @@ zipp==3.23.0
 gunicorn
 pytz
 phonenumbers
+sib-api-v3-sdk
 
 
